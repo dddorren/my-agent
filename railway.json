@@ -7,8 +7,6 @@
   "deploy": {
     "numReplicas": 1,
     "restartPolicyType": "ON_FAILURE",
-    "restartPolicyLimit": 3,
-    "runtime": "MULTI_CONTAINER",
-    "region": "us-west-2"
+    "restartPolicyLimit": 3
   }
 }
