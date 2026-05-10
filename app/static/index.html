@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小红书内容生成助手</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 50%, #f8b500 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .login-form, .content-area {
+            padding: 40px 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #ff6b9d;
+            box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.1);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f5f5f5;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: #e8e8e8;
+        }
+
+        .btn-copy {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            margin-top: 20px;
+        }
+
+        .btn-copy:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(17, 153, 142, 0.4);
+        }
+
+        .btn-copy.copied {
+            background: #28a745;
+        }
+
+        .btn-generate {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-top: 10px;
+        }
+
+        .btn-generate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-generate:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .content-card {
+            background: #fff5f8;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff6b9d;
+        }
+
+        .content-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .content-story {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .content-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: linear-gradient(135deg, #ffeef4 0%, #ffdde6 100%);
+            color: #c44569;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 20px;
+        }
+
+        .user-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .user-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .logout-btn {
+            color: #999;
+            font-size: 14px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .logout-btn:hover {
+            color: #ff6b9d;
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: #ffeef4;
+            color: #c44569;
+            padding: 4px 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 10px;
+                border-radius: 16px;
+            }
+
+            .login-form, .content-area {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>小红书内容助手</h1>
+            <p>每日精选 · 一键发布</p>
+        </div>
+
+        <div class="login-form" id="loginForm">
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" id="username" placeholder="请输入用户名">
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" placeholder="请输入密码">
+            </div>
+            <button class="btn btn-primary" onclick="handleLogin()">登录</button>
+            <button class="btn btn-secondary" onclick="handleGuestLogin()">游客模式</button>
+        </div>
+
+        <div class="content-area" id="contentArea" style="display: none;">
+            <div class="user-info">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div class="user-avatar" id="userAvatar">U</div>
+                    <span class="user-name" id="userName">用户</span>
+                </div>
+                <span class="logout-btn" onclick="handleLogout()">退出</span>
+            </div>
+
+            <div class="date-badge" id="currentDate">2024年1月1日</div>
+
+            <div class="content-card" id="contentCard">
+                <h2 class="content-title" id="contentTitle">标题加载中...</h2>
+                <p class="content-story" id="contentStory">内容加载中...</p>
+                <div class="content-tags" id="contentTags"></div>
+            </div>
+
+            <button class="btn btn-generate" id="generateBtn" onclick="handleGenerate()" disabled>
+                重新生成内容
+            </button>
+            <button class="btn btn-copy" id="copyBtn" onclick="handleCopy()">
+                一键复制
+            </button>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        const mockUsers = [
+            { username: 'user', password: '123456', name: '小红书达人' },
+            { username: 'admin', password: 'admin', name: '管理员' }
+        ];
+
+        let currentContent = null;
+
+        const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            ? ''
+            : `https://${window.location.hostname}`;
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2000);
+        }
+
+        async function fetchStory() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/story`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        topic: '深夜的咖啡馆',
+                        style: '情感'
+                    }),
+                });
+
+                if (!response.ok) {
+                    throw new Error('请求失败');
+                }
+
+                const result = await response.json();
+                if (result.success && result.data) {
+                    return result.data;
+                }
+                return null;
+            } catch (error) {
+                console.error('获取内容失败:', error);
+                return null;
+            }
+        }
+
+        async function handleLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const user = mockUsers.find(u => u.username === username && u.password === password);
+
+            if (user) {
+                localStorage.setItem('user', JSON.stringify(user));
+                showToast('登录成功！正在生成内容...');
+                setTimeout(() => {
+                    showContent(user);
+                }, 500);
+            } else {
+                showToast('用户名或密码错误');
+            }
+        }
+
+        function handleGuestLogin() {
+            const guestUser = { username: 'guest', name: '游客' };
+            localStorage.setItem('user', JSON.stringify(guestUser));
+            showToast('欢迎来到游客模式');
+            setTimeout(() => {
+                showContent(guestUser);
+            }, 500);
+        }
+
+        function handleLogout() {
+            localStorage.removeItem('user');
+            showToast('已退出登录');
+            setTimeout(() => {
+                document.getElementById('contentArea').style.display = 'none';
+                document.getElementById('loginForm').style.display = 'block';
+            }, 500);
+        }
+
+        async function showContent(user) {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('contentArea').style.display = 'block';
+
+            document.getElementById('userAvatar').textContent = user.name.charAt(0);
+            document.getElementById('userName').textContent = user.name;
+
+            const today = new Date();
+            const dateStr = `${today.getFullYear()}年${today.getMonth() + 1}月${today.getDate()}日`;
+            document.getElementById('currentDate').textContent = dateStr;
+
+            document.getElementById('contentTitle').textContent = '正在生成内容...';
+            document.getElementById('contentStory').textContent = '请稍候，AI正在创作中...';
+            document.getElementById('contentTags').innerHTML = '';
+            document.getElementById('generateBtn').disabled = true;
+
+            const content = await fetchStory();
+
+            if (content && content.title && content.story) {
+                currentContent = content;
+                document.getElementById('contentTitle').textContent = content.title;
+                document.getElementById('contentStory').textContent = content.story;
+
+                const tagsContainer = document.getElementById('contentTags');
+                tagsContainer.innerHTML = '';
+                if (content.tags && Array.isArray(content.tags)) {
+                    content.tags.forEach(tag => {
+                        const tagElement = document.createElement('span');
+                        tagElement.className = 'tag';
+                        tagElement.textContent = tag;
+                        tagsContainer.appendChild(tagElement);
+                    });
+                }
+                showToast('内容生成成功！');
+            } else {
+                const defaultContent = {
+                    title: '凌晨3点的陌生来电',
+                    story: `深夜的咖啡馆里，暖黄色的灯光漫过木质桌面，她独自坐在角落，指尖反复摩挲着那张泛黄的照片。照片上的两个人笑得灿烂，阳光透过树叶洒在他们年轻的脸上。
+
+"小姐，需要续杯吗？"服务员的声音将她从回忆中拉回。她点点头，目光却始终没有离开那张照片。
+
+三年了，整整三年。她以为时间会冲淡一切，可每当夜深人静，那张脸总会清晰地出现在她梦中。
+
+三年前的那个夏天，他们相遇在这座城市最热闹的夜市。他穿着白色T恤，手里拿着棉花糖，笑容干净得像雨后的天空。"你也喜欢这家的糖水吗？"他笑着问她，眼睛里有星星在闪。
+
+从那以后，他们成了这座城市最让人羡慕的情侣。一起看日出，一起逛遍每条小巷，一起在深夜的路灯下拥抱。她以为这就是永远，直到那个雨夜。
+
+那天，他说要出差，却在机场被她撞见和另一个女孩拥抱。她没有冲上去质问，只是静静地转身离开，任由雨水打湿眼眶。
+
+分手后的日子像被按下了快进键。她努力工作，努力生活，努力让自己看起来很好。可只有她自己知道，心里那个角落永远空着一块。
+
+就在她以为一切都已尘封的时候，今天下午，她收到了一个包裹。里面是一本日记，还有那张她以为早已遗失的照片。
+
+日记里记录着他们在一起的每一天，字里行间都是他的温柔和爱意。直到最后一页，她看到了那段她从未知道的真相。
+
+原来那天他不是去出差，而是去医院——他被查出了绝症。那个女孩是他的妹妹，从国外赶回来陪他最后一程。他选择独自承受一切，只是为了让她能毫无牵挂地继续生活。
+
+泪水模糊了视线，她颤抖着翻开日记的最后一页，上面写着："如果有来生，我还要遇见你，还要和你一起看遍这世间所有的美好。"
+
+窗外的雨还在下，她握紧那张照片，终于明白了什么叫做真正的爱。原来有些告别，并不是不爱了，而是用另一种方式，继续守护着对方。`,
+                    tags: ['#情感', '#故事', '#小说', '#深夜', '#治愈', '#爱情', '#小红书']
+                };
+                currentContent = defaultContent;
+                document.getElementById('contentTitle').textContent = defaultContent.title;
+                document.getElementById('contentStory').textContent = defaultContent.story;
+
+                const tagsContainer = document.getElementById('contentTags');
+                tagsContainer.innerHTML = '';
+                defaultContent.tags.forEach(tag => {
+                    const tagElement = document.createElement('span');
+                    tagElement.className = 'tag';
+                    tagElement.textContent = tag;
+                    tagsContainer.appendChild(tagElement);
+                });
+                showToast('使用离线内容，LLM服务暂不可用');
+            }
+
+            document.getElementById('generateBtn').disabled = false;
+        }
+
+        async function handleGenerate() {
+            document.getElementById('generateBtn').disabled = true;
+            document.getElementById('contentTitle').textContent = '正在重新生成...';
+            document.getElementById('contentStory').textContent = 'AI正在创作新的故事...';
+            document.getElementById('contentTags').innerHTML = '';
+            showToast('正在生成新内容...');
+
+            const content = await fetchStory();
+
+            if (content && content.title && content.story) {
+                currentContent = content;
+                document.getElementById('contentTitle').textContent = content.title;
+                document.getElementById('contentStory').textContent = content.story;
+
+                const tagsContainer = document.getElementById('contentTags');
+                tagsContainer.innerHTML = '';
+                if (content.tags && Array.isArray(content.tags)) {
+                    content.tags.forEach(tag => {
+                        const tagElement = document.createElement('span');
+                        tagElement.className = 'tag';
+                        tagElement.textContent = tag;
+                        tagsContainer.appendChild(tagElement);
+                    });
+                }
+                showToast('内容重新生成成功！');
+            } else {
+                showToast('生成失败，使用默认内容');
+            }
+
+            document.getElementById('generateBtn').disabled = false;
+        }
+
+        function handleCopy() {
+            const title = document.getElementById('contentTitle').textContent;
+            const story = document.getElementById('contentStory').textContent;
+            const tags = Array.from(document.querySelectorAll('.tag')).map(t => t.textContent).join(' ');
+
+            const content = `${title}\n\n${story}\n\n${tags}`;
+
+            navigator.clipboard.writeText(content).then(() => {
+                const copyBtn = document.getElementById('copyBtn');
+                copyBtn.textContent = '已复制';
+                copyBtn.classList.add('copied');
+                showToast('内容已复制到剪贴板！');
+
+                setTimeout(() => {
+                    copyBtn.textContent = '一键复制';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                showToast('复制失败，请手动复制');
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedUser = localStorage.getItem('user');
+            if (savedUser) {
+                const user = JSON.parse(savedUser);
+                showContent(user);
+            }
+        });
+    </script>
+</body>
+</html>

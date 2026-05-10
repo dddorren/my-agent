@@ -1,0 +1,335 @@
+2026-05-09 17:30:09,022 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 17:30:09,024 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 17:30:09,024 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 17:49:01,293 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 17:49:01,295 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 17:49:01,296 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 17:49:22,834 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 17:49:22,835 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 17:49:22,835 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 17:54:07,059 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 17:54:07,062 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 17:54:07,063 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 17:56:40,103 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 17:56:40,105 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 17:56:40,106 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 17:57:25,245 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 17:57:25,245 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 17:57:25,245 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 17:58:13,147 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 17:58:13,147 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 17:58:13,147 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:03:41,667 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:03:41,668 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:03:41,668 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:08:24,181 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:08:24,182 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:08:24,182 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:14:47,209 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:14:47,211 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:14:47,211 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:16:37,338 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:16:37,338 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:16:37,338 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:17:20,656 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:17:20,656 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:17:20,657 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:17:20,851 - httpx - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-05-09 18:17:21,648 - app.crawler.html_crawler - INFO - HTML Crawler 新浪新闻 fetched 45 items
+2026-05-09 18:17:21,648 - app.crawler.crawler_manager - INFO - Crawler 新浪新闻 returned 45 items
+2026-05-09 18:17:21,760 - app.crawler.html_crawler - ERROR - HTML Crawler 知乎热榜 failed: 403 Client Error: Forbidden for url: https://www.zhihu.com/hot
+2026-05-09 18:17:21,760 - app.crawler.crawler_manager - INFO - Crawler 知乎热榜 returned 0 items
+2026-05-09 18:17:22,516 - app.crawler.html_crawler - INFO - HTML Crawler 网易新闻 fetched 55 items
+2026-05-09 18:17:22,517 - app.crawler.crawler_manager - INFO - Crawler 网易新闻 returned 55 items
+2026-05-09 18:17:22,526 - app.processor.data_cleaner - INFO - Cleaned 64 items from 100 raw items
+2026-05-09 18:17:22,527 - app.processor.data_cleaner - INFO - Deduplicated 64 items to 64 unique items
+2026-05-09 18:17:22,608 - app.topic_agent.topic_agent - ERROR - Clustering failed: 'NoneType' object has no attribute 'split'
+2026-05-09 18:17:27,478 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 18:17:27,490 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 257
+2026-05-09 18:17:27,491 - app.topic_agent.topic_agent - INFO - Generated 3 topics
+2026-05-09 18:17:27,499 - httpx - INFO - HTTP Request: GET http://testserver/topics?count=3 "HTTP/1.1 200 OK"
+2026-05-09 18:18:14,975 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:18:14,976 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:18:14,976 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:19:08,833 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:19:08,833 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:19:08,833 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:19:08,993 - httpx - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-05-09 18:19:24,481 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:19:24,481 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:19:24,481 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:20:27,528 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:20:27,529 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:20:27,529 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:20:51,666 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:20:51,666 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:20:51,667 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:20:51,771 - httpx - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-05-09 18:20:52,400 - app.crawler.html_crawler - INFO - HTML Crawler 新浪新闻 fetched 46 items
+2026-05-09 18:20:52,400 - app.crawler.crawler_manager - INFO - Crawler 新浪新闻 returned 46 items
+2026-05-09 18:20:52,529 - app.crawler.html_crawler - ERROR - HTML Crawler 知乎热榜 failed: 403 Client Error: Forbidden for url: https://www.zhihu.com/hot
+2026-05-09 18:20:52,530 - app.crawler.crawler_manager - INFO - Crawler 知乎热榜 returned 0 items
+2026-05-09 18:20:53,522 - app.crawler.html_crawler - INFO - HTML Crawler 网易新闻 fetched 55 items
+2026-05-09 18:20:53,522 - app.crawler.crawler_manager - INFO - Crawler 网易新闻 returned 55 items
+2026-05-09 18:20:53,531 - app.processor.data_cleaner - INFO - Cleaned 64 items from 101 raw items
+2026-05-09 18:20:53,532 - app.processor.data_cleaner - INFO - Deduplicated 64 items to 64 unique items
+2026-05-09 18:20:53,590 - app.topic_agent.topic_agent - ERROR - Clustering failed: 'NoneType' object has no attribute 'split'
+2026-05-09 18:20:58,492 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 18:20:58,506 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 262
+2026-05-09 18:20:58,506 - app.topic_agent.llm_client - ERROR - Failed to parse LLM response as JSON: ```json
+{
+    "topics": [
+        "35岁国企人凌晨三点刷招聘App：我躺平的手在发抖…",
+        "一只鸡都比我活得轻松？打工人看完这碗‘萨莉亚酒局’破防了",
+        "43岁货车司机首进藏，车内侧卧离世视频流出…我们到底在拼什么？",
+        "徽菜馆招牌把‘徽’写成‘微’，老板说‘顾客都认得’…可我的文化羞耻心它自己站起来了！",
+        "美公布UFO文件当天，我在出租屋用AI生成了‘外星人点单小票’…结果我妈真信了"
+    ]
+}
+```
+2026-05-09 18:20:58,509 - app.topic_agent.topic_agent - INFO - Generated 0 topics
+2026-05-09 18:20:58,517 - httpx - INFO - HTTP Request: GET http://testserver/topics?count=3 "HTTP/1.1 200 OK"
+2026-05-09 18:21:27,891 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 18:21:27,895 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 1428
+2026-05-09 18:21:27,896 - app.writer_agent.writer_agent - INFO - Generated story for topic: 深夜的陌生来电, length: 1295
+2026-05-09 18:21:29,100 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 18:21:29,102 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 36
+2026-05-09 18:21:38,800 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:21:38,802 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:21:38,803 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:21:38,904 - httpx - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-05-09 18:21:39,449 - app.crawler.html_crawler - INFO - HTML Crawler 新浪新闻 fetched 46 items
+2026-05-09 18:21:39,449 - app.crawler.crawler_manager - INFO - Crawler 新浪新闻 returned 46 items
+2026-05-09 18:21:39,566 - app.crawler.html_crawler - ERROR - HTML Crawler 知乎热榜 failed: 403 Client Error: Forbidden for url: https://www.zhihu.com/hot
+2026-05-09 18:21:39,567 - app.crawler.crawler_manager - INFO - Crawler 知乎热榜 returned 0 items
+2026-05-09 18:21:40,348 - app.crawler.html_crawler - INFO - HTML Crawler 网易新闻 fetched 55 items
+2026-05-09 18:21:40,348 - app.crawler.crawler_manager - INFO - Crawler 网易新闻 returned 55 items
+2026-05-09 18:21:40,357 - app.processor.data_cleaner - INFO - Cleaned 64 items from 101 raw items
+2026-05-09 18:21:40,358 - app.processor.data_cleaner - INFO - Deduplicated 64 items to 64 unique items
+2026-05-09 18:21:40,403 - app.topic_agent.topic_agent - ERROR - Clustering failed: 'NoneType' object has no attribute 'split'
+2026-05-09 18:21:45,027 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 18:21:45,049 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 262
+2026-05-09 18:21:45,049 - app.topic_agent.llm_client - ERROR - Failed to parse LLM response as JSON: ```json
+{
+    "topics": [
+        "35岁国企人凌晨三点刷招聘App：我躺平的手在发抖…",
+        "一只鸡都比我活得轻松？打工人看完这碗‘萨莉亚酒局’破防了",
+        "43岁货车司机首进藏，车内侧卧离世视频流出…我们到底在拼什么？",
+        "徽菜馆招牌把‘徽’写成‘微’，老板说‘顾客都认得’…可我的文化羞耻心它自己站起来了！",
+        "美公布UFO文件当天，我在出租屋用AI生成了‘外星人点单小票’…结果我妈真信了"
+    ]
+}
+```
+2026-05-09 18:21:45,050 - app.topic_agent.topic_agent - INFO - Generated 0 topics
+2026-05-09 18:21:45,051 - httpx - INFO - HTTP Request: GET http://testserver/topics?count=3 "HTTP/1.1 200 OK"
+2026-05-09 18:21:59,867 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:21:59,867 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:21:59,867 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:21:59,969 - httpx - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-05-09 18:22:00,601 - app.crawler.html_crawler - INFO - HTML Crawler 新浪新闻 fetched 46 items
+2026-05-09 18:22:00,602 - app.crawler.crawler_manager - INFO - Crawler 新浪新闻 returned 46 items
+2026-05-09 18:22:00,781 - app.crawler.html_crawler - ERROR - HTML Crawler 知乎热榜 failed: 403 Client Error: Forbidden for url: https://www.zhihu.com/hot
+2026-05-09 18:22:00,781 - app.crawler.crawler_manager - INFO - Crawler 知乎热榜 returned 0 items
+2026-05-09 18:22:01,363 - app.crawler.html_crawler - INFO - HTML Crawler 网易新闻 fetched 55 items
+2026-05-09 18:22:01,363 - app.crawler.crawler_manager - INFO - Crawler 网易新闻 returned 55 items
+2026-05-09 18:22:01,369 - app.processor.data_cleaner - INFO - Cleaned 64 items from 101 raw items
+2026-05-09 18:22:01,369 - app.processor.data_cleaner - INFO - Deduplicated 64 items to 64 unique items
+2026-05-09 18:22:01,409 - app.topic_agent.topic_agent - ERROR - Clustering failed: 'NoneType' object has no attribute 'split'
+2026-05-09 18:22:06,862 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 18:22:06,875 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 275
+2026-05-09 18:22:06,875 - app.topic_agent.topic_agent - INFO - Generated 3 topics
+2026-05-09 18:22:06,878 - httpx - INFO - HTTP Request: GET http://testserver/topics?count=3 "HTTP/1.1 200 OK"
+2026-05-09 18:22:16,719 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:22:16,719 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:22:16,719 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:22:16,835 - httpx - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-05-09 18:22:17,446 - app.crawler.html_crawler - INFO - HTML Crawler 新浪新闻 fetched 46 items
+2026-05-09 18:22:17,446 - app.crawler.crawler_manager - INFO - Crawler 新浪新闻 returned 46 items
+2026-05-09 18:22:17,548 - app.crawler.html_crawler - ERROR - HTML Crawler 知乎热榜 failed: 403 Client Error: Forbidden for url: https://www.zhihu.com/hot
+2026-05-09 18:22:17,548 - app.crawler.crawler_manager - INFO - Crawler 知乎热榜 returned 0 items
+2026-05-09 18:22:18,505 - app.crawler.html_crawler - INFO - HTML Crawler 网易新闻 fetched 55 items
+2026-05-09 18:22:18,505 - app.crawler.crawler_manager - INFO - Crawler 网易新闻 returned 55 items
+2026-05-09 18:22:18,512 - app.processor.data_cleaner - INFO - Cleaned 64 items from 101 raw items
+2026-05-09 18:22:18,513 - app.processor.data_cleaner - INFO - Deduplicated 64 items to 64 unique items
+2026-05-09 18:22:18,556 - app.topic_agent.topic_agent - ERROR - Clustering failed: 'NoneType' object has no attribute 'split'
+2026-05-09 18:22:22,506 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 18:22:22,514 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 226
+2026-05-09 18:22:22,514 - app.topic_agent.llm_client - ERROR - Failed to parse LLM response as JSON: ```json
+{
+    "topics": [
+        "35岁国企人凌晨三点刷招聘App：我躺平的手在发抖…",
+        "一只鸡都比我活得轻松？打工人看完这碗饺子直接破防了",
+        "人均30的萨莉亚，怎么成了北上广酒鬼的深夜树洞？",
+        "43岁货车司机首进藏，车内侧卧离世视频流出…我们到底在赶什么？",
+        "酒店最脏的不是马桶，是它！95%的人每天都在用…"
+    ]
+}
+```
+2026-05-09 18:22:22,514 - app.topic_agent.topic_agent - INFO - Generated 0 topics
+2026-05-09 18:22:22,517 - httpx - INFO - HTTP Request: GET http://testserver/topics?count=3 "HTTP/1.1 200 OK"
+2026-05-09 18:22:59,493 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:22:59,494 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:22:59,495 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:22:59,618 - httpx - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-05-09 18:23:00,242 - app.crawler.html_crawler - INFO - HTML Crawler 新浪新闻 fetched 46 items
+2026-05-09 18:23:00,243 - app.crawler.crawler_manager - INFO - Crawler 新浪新闻 returned 46 items
+2026-05-09 18:23:00,337 - app.crawler.html_crawler - ERROR - HTML Crawler 知乎热榜 failed: 403 Client Error: Forbidden for url: https://www.zhihu.com/hot
+2026-05-09 18:23:00,342 - app.crawler.crawler_manager - INFO - Crawler 知乎热榜 returned 0 items
+2026-05-09 18:23:00,917 - app.crawler.html_crawler - INFO - HTML Crawler 网易新闻 fetched 55 items
+2026-05-09 18:23:00,917 - app.crawler.crawler_manager - INFO - Crawler 网易新闻 returned 55 items
+2026-05-09 18:23:00,926 - app.processor.data_cleaner - INFO - Cleaned 64 items from 101 raw items
+2026-05-09 18:23:00,928 - app.processor.data_cleaner - INFO - Deduplicated 64 items to 64 unique items
+2026-05-09 18:23:00,974 - app.topic_agent.topic_agent - ERROR - Clustering failed: 'NoneType' object has no attribute 'split'
+2026-05-09 18:23:06,195 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 18:23:06,206 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 261
+2026-05-09 18:23:06,206 - app.topic_agent.topic_agent - INFO - Generated 3 topics
+2026-05-09 18:23:06,208 - httpx - INFO - HTTP Request: GET http://testserver/topics?count=3 "HTTP/1.1 200 OK"
+2026-05-09 18:23:33,441 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:23:33,441 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:23:33,441 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:23:33,556 - httpx - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-05-09 18:23:34,137 - app.crawler.html_crawler - INFO - HTML Crawler 新浪新闻 fetched 46 items
+2026-05-09 18:23:34,137 - app.crawler.crawler_manager - INFO - Crawler 新浪新闻 returned 46 items
+2026-05-09 18:23:34,256 - app.crawler.html_crawler - ERROR - HTML Crawler 知乎热榜 failed: 403 Client Error: Forbidden for url: https://www.zhihu.com/hot
+2026-05-09 18:23:34,256 - app.crawler.crawler_manager - INFO - Crawler 知乎热榜 returned 0 items
+2026-05-09 18:23:34,961 - app.crawler.html_crawler - INFO - HTML Crawler 网易新闻 fetched 55 items
+2026-05-09 18:23:34,962 - app.crawler.crawler_manager - INFO - Crawler 网易新闻 returned 55 items
+2026-05-09 18:23:34,968 - app.processor.data_cleaner - INFO - Cleaned 64 items from 101 raw items
+2026-05-09 18:23:34,969 - app.processor.data_cleaner - INFO - Deduplicated 64 items to 64 unique items
+2026-05-09 18:23:35,005 - app.topic_agent.topic_agent - ERROR - Clustering failed: 'NoneType' object has no attribute 'split'
+2026-05-09 18:23:39,498 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 18:23:39,508 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 255
+2026-05-09 18:23:39,508 - app.topic_agent.topic_agent - INFO - Generated 3 topics
+2026-05-09 18:23:39,511 - httpx - INFO - HTTP Request: GET http://testserver/topics?count=3 "HTTP/1.1 200 OK"
+2026-05-09 18:24:09,810 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:24:09,811 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:24:09,811 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:24:09,915 - httpx - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-05-09 18:24:10,469 - app.crawler.html_crawler - INFO - HTML Crawler 新浪新闻 fetched 46 items
+2026-05-09 18:24:10,469 - app.crawler.crawler_manager - INFO - Crawler 新浪新闻 returned 46 items
+2026-05-09 18:24:10,561 - app.crawler.html_crawler - ERROR - HTML Crawler 知乎热榜 failed: 403 Client Error: Forbidden for url: https://www.zhihu.com/hot
+2026-05-09 18:24:10,561 - app.crawler.crawler_manager - INFO - Crawler 知乎热榜 returned 0 items
+2026-05-09 18:24:11,108 - app.crawler.html_crawler - INFO - HTML Crawler 网易新闻 fetched 55 items
+2026-05-09 18:24:11,108 - app.crawler.crawler_manager - INFO - Crawler 网易新闻 returned 55 items
+2026-05-09 18:24:11,115 - app.processor.data_cleaner - INFO - Cleaned 64 items from 101 raw items
+2026-05-09 18:24:11,116 - app.processor.data_cleaner - INFO - Deduplicated 64 items to 64 unique items
+2026-05-09 18:24:11,146 - app.topic_agent.topic_agent - ERROR - Clustering failed: 'NoneType' object has no attribute 'split'
+2026-05-09 18:24:15,444 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 18:24:15,452 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 239
+2026-05-09 18:24:15,454 - app.topic_agent.topic_agent - INFO - Generated 3 topics
+2026-05-09 18:24:15,454 - httpx - INFO - HTTP Request: GET http://testserver/topics?count=3 "HTTP/1.1 200 OK"
+2026-05-09 18:26:22,615 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:26:22,616 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:26:22,616 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:27:24,333 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:27:24,333 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:27:24,334 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:27:45,458 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:27:45,459 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:27:45,459 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:27:45,587 - httpx - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-05-09 18:27:46,296 - app.crawler.html_crawler - INFO - HTML Crawler 新浪新闻 fetched 46 items
+2026-05-09 18:27:46,296 - app.crawler.crawler_manager - INFO - Crawler 新浪新闻 returned 46 items
+2026-05-09 18:27:46,420 - app.crawler.html_crawler - ERROR - HTML Crawler 知乎热榜 failed: 403 Client Error: Forbidden for url: https://www.zhihu.com/hot
+2026-05-09 18:27:46,421 - app.crawler.crawler_manager - INFO - Crawler 知乎热榜 returned 0 items
+2026-05-09 18:27:47,340 - app.crawler.html_crawler - INFO - HTML Crawler 网易新闻 fetched 55 items
+2026-05-09 18:27:47,340 - app.crawler.crawler_manager - INFO - Crawler 网易新闻 returned 55 items
+2026-05-09 18:27:47,351 - app.processor.data_cleaner - INFO - Cleaned 65 items from 101 raw items
+2026-05-09 18:27:47,353 - app.processor.data_cleaner - INFO - Deduplicated 65 items to 65 unique items
+2026-05-09 18:27:47,403 - app.topic_agent.topic_agent - ERROR - Clustering failed: 'NoneType' object has no attribute 'split'
+2026-05-09 18:27:53,372 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 18:27:53,386 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 250
+2026-05-09 18:27:53,386 - app.topic_agent.topic_agent - INFO - Generated 3 topics
+2026-05-09 18:27:53,388 - httpx - INFO - HTTP Request: GET http://testserver/topics?count=3 "HTTP/1.1 200 OK"
+2026-05-09 18:29:34,041 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:29:34,042 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:29:34,042 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:29:36,359 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:29:36,359 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:29:36,359 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:31:02,546 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:31:02,546 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:31:02,547 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:31:28,909 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:31:28,910 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:31:28,910 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:32:57,666 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:32:57,666 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:32:57,667 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:33:48,042 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:33:48,042 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:33:48,043 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:34:49,043 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:34:49,044 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:34:49,044 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:35:10,123 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:35:10,123 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:35:10,123 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:39:38,585 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:39:38,585 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:39:38,586 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:40:32,980 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:40:32,981 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:40:32,981 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 18:41:25,722 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 18:41:25,735 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 18:41:25,735 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 19:14:51,589 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 19:14:51,590 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 19:14:51,591 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 19:20:06,668 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 19:20:06,669 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 19:20:06,669 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 19:20:26,834 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 19:20:26,834 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 19:20:26,834 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 19:21:19,327 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 19:21:19,328 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 19:21:19,328 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 19:23:00,344 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 19:23:00,344 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 19:23:00,344 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 19:26:00,037 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 19:26:00,038 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 19:26:00,038 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 19:26:33,056 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 19:26:33,082 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 1452
+2026-05-09 19:26:33,083 - app.writer_agent.writer_agent - INFO - Generated full story for topic: 深夜的咖啡馆, length: 1325
+2026-05-09 19:26:34,290 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 19:26:34,294 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 43
+2026-05-09 19:26:47,811 - app.crawler.crawler_manager - INFO - Added crawler: 新浪新闻
+2026-05-09 19:26:47,812 - app.crawler.crawler_manager - INFO - Added crawler: 知乎热榜
+2026-05-09 19:26:47,812 - app.crawler.crawler_manager - INFO - Added crawler: 网易新闻
+2026-05-09 19:27:23,396 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 19:27:23,409 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 1395
+2026-05-09 19:27:23,409 - app.writer_agent.writer_agent - INFO - Generated full story for topic: 深夜的咖啡馆, length: 1287
+2026-05-09 19:27:24,622 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 19:27:24,624 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 32
+2026-05-09 19:27:54,534 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 19:27:54,536 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 1741
+2026-05-09 19:27:54,536 - app.editor_agent.editor_agent - INFO - Adjusted story style to: 情感
+2026-05-09 19:27:56,218 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 19:27:56,220 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 78
+2026-05-09 19:27:56,221 - app.editor_agent.editor_agent - INFO - Edited content with 8 tags
+2026-05-09 19:30:04,819 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 19:30:04,820 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 1456
+2026-05-09 19:30:04,821 - app.writer_agent.writer_agent - INFO - Generated full story for topic: 深夜的咖啡馆, length: 1317
+2026-05-09 19:30:06,976 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 19:30:06,982 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 51
+2026-05-09 19:30:40,015 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 19:30:40,016 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 1902
+2026-05-09 19:30:40,016 - app.editor_agent.editor_agent - INFO - Adjusted story style to: 情感
+2026-05-09 19:30:41,662 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 19:30:41,663 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 60
+2026-05-09 19:30:41,663 - app.editor_agent.editor_agent - INFO - Edited content with 8 tags
+2026-05-09 20:11:44,829 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 20:11:44,858 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 1160
+2026-05-09 20:11:44,862 - app.writer_agent.writer_agent - INFO - Generated full story for topic: 深夜的咖啡馆, length: 1073
+2026-05-09 20:11:46,276 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 20:11:46,326 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 34
+2026-05-09 20:12:15,768 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 20:12:15,773 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 1725
+2026-05-09 20:12:15,774 - app.editor_agent.editor_agent - INFO - Adjusted story style to: 情感
+2026-05-09 20:12:17,402 - httpx - INFO - HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 20:12:17,451 - app.topic_agent.llm_client - INFO - LLM call successful, response length: 71
+2026-05-09 20:12:17,452 - app.editor_agent.editor_agent - INFO - Edited content with 8 tags
