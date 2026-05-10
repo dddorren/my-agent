@@ -8,12 +8,14 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt --index-url https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install --no-cache-dir -r requirements.txt || pip install --no-cache-dir fastapi uvicorn requests beautifulsoup4 apscheduler openai scikit-learn pydantic python-dotenv feedparser pandas numpy markdown PyYAML loguru supabase pydantic-settings
 
 COPY . .
 
 ENV PYTHONUNBUFFERED=1
 ENV PORT=8000
+
+RUN pip install --no-cache-dir jieba dashscope
 
 EXPOSE 8000
 
