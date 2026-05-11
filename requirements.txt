@@ -19,4 +19,4 @@ PyYAML==6.0.1
 loguru==0.7.2
 supabase==2.3.0
 pydantic-settings==2.1.0
-jieba
+jieba==0.42.1
