@@ -328,9 +328,7 @@
 
         let currentContent = null;
 
-        const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-            ? ''
-            : `https://${window.location.hostname}`;
+        const API_BASE_URL = 'https://xiaohongshu-agent-production.up.railway.app';
 
         function showToast(message) {
             const toast = document.getElementById('toast');
