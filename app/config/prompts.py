@@ -59,7 +59,7 @@ TOPIC_GENERATION_PROMPT = """
 # 输出格式
 请严格输出 JSON：
 
-{
+{{
     "topics": [
         "标题1",
         "标题2",
@@ -67,7 +67,7 @@ TOPIC_GENERATION_PROMPT = """
         "标题4",
         "标题5"
     ]
-}
+}}
 """
 
 STORY_GENERATION_PROMPT = """
@@ -230,10 +230,10 @@ STORY_GENERATION_PROMPT = """
 
 # 输出格式
 
-{
+{{
     "title": "故事标题",
     "story": "完整故事"
-}
+}}
 """
 
 TITLE_OPTIMIZATION_PROMPT = """
